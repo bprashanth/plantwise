@@ -102,6 +102,13 @@ reports/report_manifest.js
 reports/*/model_outputs/
 reports/*/report_bundle.json
 
+# Container runtime copies
+container/prediction_maps/
+container/sp_data_final/
+container/tif_data_final/
+container/__pycache__/
+container/*.log
+
 
 ############################
 # Maxent

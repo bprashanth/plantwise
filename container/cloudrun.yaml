@@ -1,0 +1,85 @@
+apiVersion: serving.knative.dev/v1
+kind: Revision
+metadata:
+  name: species-api-00017-xlk
+  namespace: 452165326340
+  selfLink: /apis/serving.knative.dev/v1/namespaces/452165326340/revisions/species-api-00017-xlk
+  uid: d3c501a5-a78e-4878-ba0f-1b92f31a4e1d
+  resourceVersion: AAY1ykvo0TQ
+  generation: 1
+  creationTimestamp: "2025-05-23T09:32:51.079037Z"
+  labels:
+    client.knative.dev/nonce: cljrdxettw
+    serving.knative.dev/configuration: species-api
+    serving.knative.dev/configurationGeneration: 17
+    serving.knative.dev/service: species-api
+    serving.knative.dev/serviceUid: 1b6d6c94-78f6-4630-aa3d-c22592df095b
+    serving.knative.dev/route: species-api
+    run.googleapis.com/satisfiesPzs: "true"
+    cloud.googleapis.com/location: asia-south1
+    run.googleapis.com/startupProbeType: Default
+  annotations:
+    autoscaling.knative.dev/maxScale: 1
+    run.googleapis.com/client-name: gcloud
+    run.googleapis.com/client-version: 515.0.0
+    serving.knative.dev/creator: plantwise30@gmail.com
+    run.googleapis.com/operation-id: 2cf308dc-4fec-4598-9df5-9e78c4ae9207
+    run.googleapis.com/startup-cpu-boost: "true"
+  ownerReferences:
+  - kind: Configuration
+    name: species-api
+    uid: eddb2ceb-1b62-4f04-9323-757c7d3b3b85
+    apiVersion: serving.knative.dev/v1
+    controller: true
+    blockOwnerDeletion: true
+spec:
+  containerConcurrency: 80
+  timeoutSeconds: 300
+  serviceAccountName: 452165326340-compute@developer.gserviceaccount.com
+  containers:
+  - name: species-api-1
+    image: gcr.io/plantwise30/species-api@sha256:7202bfc182fdd37f13006137f9d5c476a88cbd8a02f6d2da3a6a8bc449103261
+    ports:
+    - name: http1
+      containerPort: 8080
+    resources:
+      limits:
+        cpu: 8000m
+        memory: 8Gi
+    startupProbe:
+      timeoutSeconds: 240
+      periodSeconds: 240
+      failureThreshold: 1
+      tcpSocket:
+        port: 8080
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: "True"
+    message: Deploying revision succeeded in 1m1.21s.
+    lastTransitionTime: "2025-05-23T09:33:52.295633Z"
+  - type: Active
+    status: "True"
+    lastTransitionTime: "2025-05-23T09:33:52.354162Z"
+    severity: Info
+  - type: ContainerHealthy
+    status: "True"
+    message: Containers became healthy in 6.72s.
+    lastTransitionTime: "2025-05-23T09:33:52.260885Z"
+  - type: ContainerReady
+    status: "True"
+    message: Container image import completed in 48.18s.
+    lastTransitionTime: "2025-05-23T09:33:41.546620Z"
+  - type: ResourcesAvailable
+    status: "True"
+    message: "Provisioning imported containers completed in 3.71s. Checking container\
+      \ health. This will wait for up to 4m for the configured startup probe, including\
+      \ an initial delay of 0s."
+    lastTransitionTime: "2025-05-23T09:33:45.255262Z"
+  logUrl: https://console.cloud.google.com/logs/viewer?project=plantwise30&resource=cloud_run_revision/service_name/species-api/revision_name/species-api-00017-xlk&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22species-api%22%0Aresource.labels.revision_name%3D%22species-api-00017-xlk%22
+  imageDigest: gcr.io/plantwise30/species-api@sha256:7202bfc182fdd37f13006137f9d5c476a88cbd8a02f6d2da3a6a8bc449103261
+  containerStatuses:
+  - name: species-api-1
+    imageDigest: gcr.io/plantwise30/species-api@sha256:7202bfc182fdd37f13006137f9d5c476a88cbd8a02f6d2da3a6a8bc449103261
+

@@ -122,6 +122,12 @@ Which can be opened via the regression viewer - [Jump to section](#3-to-verify-r
 
 ### Run the app
 
+#### Backend 
+
+You can run the backend through the [container](./container/README.md) - this is probably simples but hard to modify. 
+
+##### Run the backend throug the source
+
 Assumes you have already seeded:
 
 - `backend/app/data/auc_and_contributions.csv`
